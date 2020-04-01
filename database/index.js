@@ -91,6 +91,31 @@ const getHeartData = (id) => {
   });
 };
 
+const addHouseEntry = (entry) => {
+  return new Promise((resolve, reject) => {
+    const queryStr = `INSERT INTO houses (neighborhood, home_cost, bedrooms, bathrooms, home_address, sf, home_image) 
+      VALUES (${entry.neighborhood}, ${entry.home_cost}, ${entry.bedrooms}, ${entry.bathroooms}, ${entry.home_address}, ${entry.sf}, ${entry.home_image})`;
+    connection.query(queryStr, (err, result) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(result);
+    });
+  });
+};
+
+const getHeartData = (id) => {
+  return new Promise((resolve, reject) => {
+    const queryStr = `DELETE FROM houses WHERE id = "${id}"`;
+    connection.query(queryStr, (err, result) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(result);
+    });
+  });
+};
+
 module.exports = {
   connection,
   getThisNeighborhoodData,
@@ -99,4 +124,5 @@ module.exports = {
   getAllNeighborhoodHouses,
   updateHeart,
   getHeartData,
+  addHouseEntry,
 };

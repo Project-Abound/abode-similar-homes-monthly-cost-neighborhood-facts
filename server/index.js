@@ -58,6 +58,22 @@ app.put('/api/houses', (req, res) => {
     });
 });
 
+app.post('/api/houses', (req, res) => {
+  db.addHouseEntry(req.body.params)
+  .then((results) => res.status(200).json(results))
+  .catch((err) => {
+    throw err;
+  });
+});
+
+app.delete('api/houses', (req, res) => {
+  db.deleteHouseEntry(req.body.params.id)
+  .then((results) => res.status(200).json(results))
+  .catch((err) => {
+    throw err;
+  })
+});
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
