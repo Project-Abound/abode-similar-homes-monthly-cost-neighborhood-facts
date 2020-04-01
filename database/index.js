@@ -10,7 +10,7 @@ const app = express();
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'secret',
+  password: '',
   database: 'abode',
 });
 
@@ -104,7 +104,7 @@ const addHouseEntry = (entry) => {
   });
 };
 
-const getHeartData = (id) => {
+const deleteHouseEntry = (id) => {
   return new Promise((resolve, reject) => {
     const queryStr = `DELETE FROM houses WHERE id = "${id}"`;
     connection.query(queryStr, (err, result) => {
@@ -125,4 +125,5 @@ module.exports = {
   updateHeart,
   getHeartData,
   addHouseEntry,
+  deleteHouseEntry,
 };
