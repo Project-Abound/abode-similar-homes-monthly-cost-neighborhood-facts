@@ -1,20 +1,44 @@
 # abode-similar-homes-monthly-cost-neighborhood-facts
 
-# CRUD API
+# Start Project
+
+start server - run command: $ npm start
+
+# API Documentation
 
 ## GET /api/houses
-If nothing is in the body - Get all houses
-If in the body {name: neighborhood_name} - Get all houses in neighborhood
-If in body {houseId: house_id} - Get heart status for house
+### Recieve All House Listings
+Nothing in request body
+
+### Recieve House Listings by Specified Neighborhood Name
+In the request body: {name: string}
+
+### Recieve Heart Status for House Listing
+In the request body: {houseId: int}
 
 ## PUT /api/houses
-In the body {houseId: house_id} - Update house's heart status
+### Update House Listing's Heart Status
+In the body {houseId: int}
 
 ## POST /api/houses
-In the body {neighborhood: neighborhood_name, home_cost: cost, bedrooms: number, bathrooms: number, home_address: address, sf: number, home_image: url} - Create new house entry
+### Create New House Listing
+
+In the request body: 
+{
+  neighborhood: string, 
+  home_cost: int, 
+  bedrooms: int, 
+  bathrooms: int, 
+  home_address: string, 
+  sf: int, 
+  home_image: string - (url)
+}
 
 ## DELETE /api/houses
-In the body {houseId: house_id} - Delete House Entry
+### Delete Existing House Listing
+
+In the request body:
+{houseId: int}
 
 
 
