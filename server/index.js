@@ -42,14 +42,6 @@ app.get('/api/houses', (req, res) => {
   }
 });
 
-app.get('/api/houses', (req, res) => {
-  db.getAllHouseData()
-    .then((results) => res.status(200).json(results))
-    .catch((err) => {
-      throw err;
-    });
-});
-
 app.put('/api/houses', (req, res) => {
   db.updateHeart(req.body.params.houseId)
     .then((results) => res.status(200).json(results))
