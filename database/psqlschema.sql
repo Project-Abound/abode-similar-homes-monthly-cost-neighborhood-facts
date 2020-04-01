@@ -2,10 +2,10 @@ DROP DATABASE IF EXISTS abode;
 
 CREATE DATABASE abode;
 
-USE abode;
+\c abode;
 
 CREATE TABLE neighborhoods (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     neighborhood VARCHAR (20) NOT NULL UNIQUE KEY,
     transit_score INT NOT NULL,
     walk_score INT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE neighborhoods (
 );
 
 CREATE TABLE houses (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     neighborhood VARCHAR (20) NOT NULL,
     home_cost INT NOT NULL,
     bedrooms INT NOT NULL,
