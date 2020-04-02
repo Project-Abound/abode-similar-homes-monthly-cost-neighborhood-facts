@@ -5,8 +5,8 @@ CREATE DATABASE abode;
 \c abode;
 
 CREATE TABLE neighborhoods (
-    id SERIAL PRIMARY KEY,
-    neighborhood VARCHAR (20) NOT NULL UNIQUE KEY,
+    hood_id SERIAL PRIMARY KEY,
+    hood_name VARCHAR (20) NOT NULL UNIQUE KEY,
     transit_score INT NOT NULL,
     walk_score INT NOT NULL,
     value_inc_dec_past INT NOT NULL,
@@ -15,13 +15,16 @@ CREATE TABLE neighborhoods (
 );
 
 CREATE TABLE houses (
-    id SERIAL PRIMARY KEY,
-    neighborhood VARCHAR (20) NOT NULL,
+    house_id SERIAL PRIMARY KEY,
+    hood_id VARCHAR (20) NOT NULL,
     home_cost INT NOT NULL,
     bedrooms INT NOT NULL,
     bathrooms INT NOT NULL,
     home_address VARCHAR (30) NOT NULL,
     sf INT NOT NULL,
-    home_image VARCHAR (7) NOT NULL,
+    home_image VARCHAR (8) NOT NULL,
     heart_filled BOOLEAN DEFAULT false
+    CONSTRAINT houses_neighborhood_fkey FOREIGN KEY (hood_id)
+      REFERENCES neighborhoods (hood_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 );
