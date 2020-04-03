@@ -42,7 +42,9 @@ app.get('/api/houses', (req, res) => {
   }
 });
 
-app.put('/api/houses', (req, res) => {
+
+
+app.put('/api/houseid/heart', (req, res) => {
   db.updateHeart(req.body.params.houseId)
     .then((results) => res.status(200).json(results))
     .catch((err) => {

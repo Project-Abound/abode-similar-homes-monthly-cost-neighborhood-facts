@@ -39,6 +39,8 @@ GET /api/neighborhoods/id/houses
 #### Update House Listing's Heart Status
 ```
 PUT /api/houses/id/heart
+PUT /api/:houseid/heart 
+ PUT /api/{houseid}/heart
 ```
 
 ### CREATE
@@ -66,7 +68,8 @@ PUT /api/houses
 DELETE /api/houses/id
 ```
 
-
+PUT /api/:houseid/heart 
+ PUT /api/{houseid}/heart
 
 '
 
