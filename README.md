@@ -18,15 +18,21 @@ GET /api/houses
 GET /api/houses/id
 ```
 
-#### Recieve House Listings by Specified Neighborhood Name 
-```
-GET /api/neighborhood
-```
-
 #### Recieve Heart Status for House Listing
 ```
 GET /api/houses/id/heart
 ```
+
+#### Recieve Neighborhood Data of Specified Neighborhood
+```
+GET /api/neighborhoods/id
+```
+
+#### Recieve House Listings in Specified Neighborhood
+```
+GET /api/neighborhoods/id/houses
+```
+
 
 ### UPDATE
 
