@@ -15,7 +15,7 @@ GET /api/houses
 
 #### Recieve Sepcefic House Listing by House ID
 ```
-GET /api/houseid
+GET /api/houses/id
 ```
 
 #### Recieve House Listings by Specified Neighborhood Name 
@@ -25,14 +25,14 @@ GET /api/neighborhood
 
 #### Recieve Heart Status for House Listing
 ```
-GET /api/houseid/heart
+GET /api/houses/id/heart
 ```
 
 ### UPDATE
 
 #### Update House Listing's Heart Status
 ```
-PUT /api/houseid/heart
+PUT /api/houses/id/heart
 ```
 
 ### CREATE
@@ -41,7 +41,7 @@ PUT /api/houseid/heart
 
 Request body: 
 ```
-PUT /api/houseid/heart
+PUT /api/houses
 {
   neighborhood: string, 
   home_cost: int, 
@@ -57,7 +57,7 @@ PUT /api/houseid/heart
 
 #### Delete Existing House Listing
 ```
-DELETE /api/houseid
+DELETE /api/houses/id
 ```
 
 
