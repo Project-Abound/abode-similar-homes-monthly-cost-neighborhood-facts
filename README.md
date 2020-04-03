@@ -6,34 +6,42 @@ start server - run command: $ npm start
 
 ## API Documentation
 
-### GET /api/houses
-#### Recieve All House Listings
-nothing in request body
+### READ
 
-#### Recieve House Listings by Specified Neighborhood Name
-Request body: 
+#### Recieve All House Listings
 ```
-{name: string}
+GET /api/houses
+```
+
+#### Recieve Sepcefic House Listing by House ID
+```
+GET /api/houseid
+```
+
+#### Recieve House Listings by Specified Neighborhood Name 
+```
+GET /api/neighborhood
 ```
 
 #### Recieve Heart Status for House Listing
-Request body: 
 ```
-{houseId: int}
+GET /api/houseid/heart
 ```
 
-### PUT /api/houses
+### UPDATE
+
 #### Update House Listing's Heart Status
-Request body:
 ```
-{houseId: int}
+PUT /api/houseid/heart
 ```
 
-### POST /api/houses
+### CREATE
+
 #### Create New House Listing
 
 Request body: 
 ```
+PUT /api/houseid/heart
 {
   neighborhood: string, 
   home_cost: int, 
@@ -45,12 +53,11 @@ Request body:
 }
 ```
 
-### DELETE /api/houses
-#### Delete Existing House Listing
+### DELETE
 
-Request body:
+#### Delete Existing House Listing
 ```
-{houseId: int}
+DELETE /api/houseid
 ```
 
 
