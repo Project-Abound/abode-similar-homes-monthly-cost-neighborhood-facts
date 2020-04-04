@@ -1,5 +1,7 @@
 CREATE KEYSPACE IF NOT EXISTS neighborhood_houses WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
 
+USE neighborhood_houses;
+
 CREATE TABLE neighborhoods_houses (
   hood_id int PRIMARY KEY,
   hood_name text,
@@ -18,7 +20,7 @@ CREATE TABLE neighborhoods_houses (
   state text,
   zipcode int,
   house_img text,
-)
+);
 
 CREATE TABLE users_houses (
   user_id int PRIMARY KEY,
@@ -39,4 +41,4 @@ CREATE TABLE users_houses (
   state text,
   zipcode int,
   house_img text,
-)
+);
