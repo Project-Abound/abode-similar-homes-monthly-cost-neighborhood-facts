@@ -70,14 +70,14 @@ for (let i = 1; i <= 1; i++) {
     entry.value_past = faker.random.number({ min: -3, max: 4 });
     entry.value_future = faker.random.number({ min: -3, max: 4 });
     entry.median_value = faker.random.number({ min: 1100, max: 2200 }) * 1000;
-    entry.house_id = i;
+    entry.house_id = n;
     entry.home_cost = Math.round((Math.floor(entry.median_value * faker.finance.amount(1.10, 1.30, 2))) / 1000) * 1000;
     entry.bedrooms = faker.random.number({ min: 3, max: 6 });
     entry.bathrooms = entry.bedrooms - faker.random.number({ min: 1, max: 2 });
     entry.street_adr = faker.address.streetAddress();
     entry.city = 'San Francisco';
     entry.state = 'California';
-    entry.zipcode = faker.address.zipCode();
+    entry.zipcode = faker.random.number({ min: 50000, max: 99999});
     entry.house_img = faker.random.number({min: 1, max: 1000})
 
     neighborhoods_houses.push(entry)
