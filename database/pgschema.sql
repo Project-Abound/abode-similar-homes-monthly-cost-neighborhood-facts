@@ -15,8 +15,9 @@ CREATE TABLE houses (
   bedrooms INTEGER NOT NULL,
   bathrooms INTEGER NOT NULL,
   street_address VARCHAR (30) NOT NULL,
-  city VARCHAR(25)
-  zipcode VARCHAR(10)
+  city VARCHAR(25),
+  us_state VARCHAR(13),
+  zipcode INTEGER,
   squarefeet INTEGER,
   home_image VARCHAR (8),
 );
