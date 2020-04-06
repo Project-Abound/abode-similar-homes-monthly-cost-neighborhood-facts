@@ -74,6 +74,7 @@ for (let i = 1; i <= 1; i++) {
     entry.home_cost = Math.round((Math.floor(entry.median_value * faker.finance.amount(1.10, 1.30, 2))) / 1000) * 1000;
     entry.bedrooms = faker.random.number({ min: 3, max: 6 });
     entry.bathrooms = entry.bedrooms - faker.random.number({ min: 1, max: 2 });
+    entry.square_feet = entry.bathrooms * faker.random.number({ min: 750, max: 950 });
     entry.street_adr = faker.address.streetAddress();
     entry.city = 'San Francisco';
     entry.state = 'California';
