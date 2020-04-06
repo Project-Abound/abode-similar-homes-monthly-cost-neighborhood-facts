@@ -34,7 +34,7 @@ const streetSuff = [
 
 // let neighborhoodId = () => { return Math.floor(Math.random() * Math.floor(14)) + 1 };
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 1; i++) {
   const csvWriter = createCsvWriter({
     path: `csv/pg/pghoods${i}.csv`,
     header: [
@@ -50,10 +50,10 @@ for (let i = 1; i <= 10; i++) {
 
   const neighborhoods = [];
 
-  for (let n = 1; n <= 1000000; n++) {
+  for (let n = 1; n <= 15; n++) {
     let entry = {};
 
-    entry.hood_id = faker.random.number({ min: 1, max: 15 });
+    entry.hood_id = n;
     entry.hood_name = sfHoods[entry.hood_id];
     entry.transit_score = faker.random.number({ min: 70, max: 99 });
     entry.walk_score = faker.random.number({ min: 70, max: 99 });
@@ -62,9 +62,6 @@ for (let i = 1; i <= 10; i++) {
     entry.median_value = faker.random.number({ min: 1100, max: 2200 }) * 1000;
 
     neighborhoods.push(entry)
-    if (n % 200000 === 0) {
-      console.log(`${n} completed of pghoods${i}.csv`);
-    }
   }
 
   csvWriter.writeRecords(neighborhoods)       // returns a promise

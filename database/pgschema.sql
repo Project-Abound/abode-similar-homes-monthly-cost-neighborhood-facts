@@ -1,4 +1,4 @@
-CREATE DATABASE neighborhood_component;
+-- CREATE DATABASE neighborhood_component;
 
 CREATE TABLE neighborhoods_table(
   hood_id SERIAL PRIMARY KEY,
