@@ -19,20 +19,9 @@ const sfHoods = {
   15: 'Presidio'
 };
 
-const streetSuff = [
-  'St.',
-  'Rd.',
-  'Ave.',
-  'Ln.',
-  'Pl.',
-  'Ct.',
-  'Terr.',
-  'Blvd.',
-  'Wy.',
-  'Dr.',
-];
-
-// let neighborhoodId = () => { return Math.floor(Math.random() * Math.floor(14)) + 1 };
+for (let h = 16; h <= 100000; h++) {
+  sfHoods[h] = faker.name.lastName();
+}
 
 for (let i = 1; i <= 1; i++) {
   const csvWriter = createCsvWriter({
@@ -50,7 +39,7 @@ for (let i = 1; i <= 1; i++) {
 
   const neighborhoods = [];
 
-  for (let n = 1; n <= 15; n++) {
+  for (let n = 1; n <= 100000; n++) {
     let entry = {};
 
     entry.hood_id = n;

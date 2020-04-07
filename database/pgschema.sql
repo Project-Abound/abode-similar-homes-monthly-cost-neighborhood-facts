@@ -1,8 +1,10 @@
--- CREATE DATABASE neighborhood_component;
+CREATE DATABASE neighborhood_component;
+
+\c neighborhood_component;
 
 CREATE TABLE neighborhoods_table(
   hood_id SERIAL PRIMARY KEY,
-  hood_name VARCHAR (20) NOT NULL UNIQUE,
+  hood_name VARCHAR (20) NOT NULL,
   transit_score INTEGER NOT NULL,
   walk_score INTEGER NOT NULL,
   value_past INTEGER NOT NULL,
