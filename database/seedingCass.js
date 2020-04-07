@@ -34,9 +34,9 @@ const streetSuff = [
 
 // let neighborhoodId = () => { return Math.floor(Math.random() * Math.floor(14)) + 1 };
 
-for (let i = 1; i <= 1; i++) {
+for (let i = 1; i <= 10; i++) {
   const csvWriter = createCsvWriter({
-    path: `csv/casshouses${i}.csv`,
+    path: `csv/cass/casshouses${i}.csv`,
     header: [
       {id: 'hood_id', title: 'hood_id'},
       {id: 'hood_name', title: 'hood_name'},
@@ -82,7 +82,7 @@ for (let i = 1; i <= 1; i++) {
     entry.house_img = faker.random.number({min: 1, max: 1000})
 
     neighborhoods_houses.push(entry)
-    if (n % 200000 === 0) {
+    if (n % 1000000 === 0) {
       console.log(`${n} completed of cass${i}.csv`);
     }
   }
