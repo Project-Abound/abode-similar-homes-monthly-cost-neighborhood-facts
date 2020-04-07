@@ -20,13 +20,13 @@ CREATE TABLE neighborhoods_houses (
   state text,
   zipcode int,
   house_img text,
-  PRIMARY KEY (hood_name, house_id)
+  PRIMARY KEY (hood_id, house_id)
 );
 
 CREATE TABLE users_houses (
   user_id int,
   user_name text,
-  hood_id int,
+  hood_id uuid,
   hood_name text,
   transit_score int,
   walk_score int,
@@ -43,5 +43,5 @@ CREATE TABLE users_houses (
   state text,
   zipcode int,
   house_img text,
-  PRIMARY KEY (user_name, hood_name, house_id)
+  PRIMARY KEY (user_name, hood_id, house_id)
 );

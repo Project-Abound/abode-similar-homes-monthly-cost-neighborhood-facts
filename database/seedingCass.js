@@ -19,20 +19,12 @@ const sfHoods = {
   15: 'Presidio'
 };
 
-const streetSuff = [
-  'St.',
-  'Rd.',
-  'Ave.',
-  'Ln.',
-  'Pl.',
-  'Ct.',
-  'Terr.',
-  'Blvd.',
-  'Wy.',
-  'Dr.',
-];
+for (let h = 16; h <= 100000; h++) {
+  sfHoods[h] = faker.name.lastName();
+}
 
 // let neighborhoodId = () => { return Math.floor(Math.random() * Math.floor(14)) + 1 };
+var counter = 0
 
 for (let i = 1; i <= 10; i++) {
   const csvWriter = createCsvWriter({
@@ -60,17 +52,18 @@ for (let i = 1; i <= 10; i++) {
 
   const neighborhoods_houses = [];
 
+
   for (let n = 1; n <= 1000000; n++) {
     let entry = {};
-
-    entry.hood_id = faker.random.number({ min: 1, max: 15 });
+    counter++;
+    entry.hood_id = faker.random.number({ min: 1, max: 100000 });
     entry.hood_name = sfHoods[entry.hood_id];
     entry.transit_score = faker.random.number({ min: 70, max: 99 });
     entry.walk_score = faker.random.number({ min: 70, max: 99 });
     entry.value_past = faker.random.number({ min: -3, max: 4 });
     entry.value_future = faker.random.number({ min: -3, max: 4 });
     entry.median_value = faker.random.number({ min: 1100, max: 2200 }) * 1000;
-    entry.house_id = n;
+    entry.house_id = counter;
     entry.home_cost = Math.round((Math.floor(entry.median_value * faker.finance.amount(1.10, 1.30, 2))) / 1000) * 1000;
     entry.bedrooms = faker.random.number({ min: 3, max: 6 });
     entry.bathrooms = entry.bedrooms - faker.random.number({ min: 1, max: 2 });
@@ -86,6 +79,7 @@ for (let i = 1; i <= 10; i++) {
       console.log(`${n} completed of cass${i}.csv`);
     }
   }
+
 
   csvWriter.writeRecords(neighborhoods_houses)       // returns a promise
     .then(() => {
